@@ -30,7 +30,11 @@ header {
   flex-wrap:wrap;
 }
 .logo {display:flex; align-items:center;}
-.logo img {height:50px; margin-right:10px;}
+.logo img {
+  height: 50px;
+  width: auto;
+  margin-right:10px;
+}
 .logo h1 {
   font-size: 2.5rem;
   font-weight: 900;
@@ -271,17 +275,13 @@ footer {
     margin-left: 5%;
     margin-right: 5%;
   }
+  .logo img {
+    height: 96px; /* fills nearly two header rows, leaves ~4% space */
+    width: auto;
+    /* ensures proportional scaling */
+    display: block;
+  }
 }
-  padding-bottom: 0.2em;
-  border-bottom: 3px solid #ffd600;
-  display: inline-block;
-}
-
-/* Responsive for Android/mobile */
-@media (max-width: 600px) {
-  .logo h1 {
-    font-size: 3.2rem;
-    text-shadow: 3px 3px 12px rgba(0,0,0,0.18), 0 0 16px #fffde7;
     border-bottom-width: 4px;
   }
 }
