@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shehachol Foster Home</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <!-- ======= Header / Navigation ======= -->
+  <header>
+    <div class="logo">
+      <img src="images\logo.jpeg" alt="Shehachol Foster Home Logo">
+      <h1>Shehachol Foster Home</h1>
+    </div>
+    <div class="header-right">
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav id="navbar">
+        <div class="nav-items">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#booking">Booking</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======= Hero Section ======= -->
+  <section id="home" class="hero">
+    <h2>Trusted 24/7 Pet Care & Foster Service</h2>
+    <p>Because every pet deserves a loving second home.</p>
+    <a class="btn" href="https://wa.me/8801615290159" target="_blank">Book on WhatsApp</a>
+  </section>
+
+  <!-- ======= About ======= -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      We provide safe, loving boarding, grooming and daycare for all kinds of pets.
+      Your furry (or feathery!) friend will be in expert hands.
+    </p>
+  </section>
+
+  <!-- ======= Services ======= -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="service-cards">
+      <div class="card">
+        <h3>Pet Grooming</h3>
+        <p>Medicated shower & dental examination.</p>
+      </div>
+      <div class="card">
+        <h3>Foster & Boarding</h3>
+        <p>Short or long-term care in a loving environment.</p>
+      </div>
+      <div class="card">
+        <h3>Daycare</h3>
+        <p>Fun and safe daily care for busy owners.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Gallery ======= -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <img src="images\1.jpeg" alt="Pet care 1">
+      <img src="images\2.jpeg" alt="Pet care 2">
+      <img src="images\3.jpeg" alt="Pet care 3">
+      <img src="images\4.jpeg" alt="Pet care 4">
+      <img src="images\5.jpeg" alt="Pet care 5">
+      <img src="images\6.jpeg" alt="Pet care 6">
+      <img src="images\7.jpeg" alt="Pet care 7"> 
+      <!-- Add more poster/pet images here -->
+    </div>
+  </section>
+
+  <!-- ======= Booking Form ======= -->
+  <section id="booking">
+    <h2>Book a Service</h2>
+    <form id="bookingForm">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" required>
+      </div>
+      <div class="form-group">
+        <label for="pet">Pet Type</label>
+        <input type="text" id="pet" placeholder="Dog, Cat, Bird..." required>
+      </div>
+      <div class="form-group">
+        <label for="service">Service</label>
+        <select id="service" required>
+          <option value="">--Choose a service--</option>
+          <option>Pet Grooming</option>
+          <option>Foster/Boarding</option>
+          <option>Daycare</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="date">Preferred Date</label>
+        <input type="date" id="date" required>
+      </div>
+      <button type="submit" class="btn">Send Booking via WhatsApp</button>
+    </form>
+  </section>
+
+  <!-- ======= Contact ======= -->
+  <footer id="contact">
+    <h1>Contact & Booking</h1>
+    <p>📞 Call/WhatsApp: <a href="tel:+8801615290159">01615-290159</a></p>
+    <p>📧 Email: info@shehachol.com</p>
+    <p>Follow us:
+      <a href="#" target="_blank">Facebook</a> |
+      <a href="#" target="_blank">Instagram</a>
+    </p>
+    <p>© 2025 Shehachol Foster Home</p>
+  </footer>
+
+  <!-- ======= JavaScript for WhatsApp ======= -->
+  <script>
+  document.getElementById('bookingForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const pet = document.getElementById('pet').value.trim();
+    const service = document.getElementById('service').value;
+    const date = document.getElementById('date').value;
+
+    if(!name || !pet || !service || !date){
+      alert("Please fill out all fields.");
+      return;
+    }
+
+    const msg = `Hello Shehachol Foster Home!%0A`
+               + `Name: ${name}%0A`
+               + `Pet: ${pet}%0A`
+               + `Service: ${service}%0A`
+               + `Preferred Date: ${date}`;
+
+    window.open(`https://wa.me/8801615290159?text=${msg}`, '_blank');
+  });
+
+  // Hamburger menu toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const navbar = document.getElementById('navbar');
+  menuToggle.addEventListener('click', function() {
+    navbar.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+  });
+  </script>
+</body>
+</html>
